@@ -47,11 +47,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) async {
     emit(HomeLoadingState(data: state.data));
-    final catModelSearch = state.data
-        .where(
-          (element) => element.name!.toLowerCase().contains(event.query),
-        )
-        .toList();
+    final query = event.query.toLowerCase().trim();
+
+    final catModelSearch = state.data.where((element) {
+      final nameMatches = element.name?.toLowerCase().contains(query) ?? false;
+      final originMatches =
+          element.origin?.toLowerCase().contains(query) ?? false;
+      return nameMatches || originMatches;
+    }).toList();
     await Future.delayed(const Duration(milliseconds: 500)).then((value) {
       return emit(
         HomeSearchState(
