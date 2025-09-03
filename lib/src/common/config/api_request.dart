@@ -184,7 +184,7 @@ class ApiClient {
         // Decodificamos el cuerpo de la respuesta de String a un objeto
         // Dart (Map o List).
         return json.decode(body);
-      } catch (e) {
+      } on Exception catch (_) {
         // Si el servidor envía una respuesta exitosa pero el JSON es inválido.
         throw ApiException(
           type: ExceptionType.formatException,
