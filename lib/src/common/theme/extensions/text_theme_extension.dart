@@ -1,7 +1,7 @@
 import 'package:app/src/common/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-final _baseFont = TextStyle(
+const _baseFont = TextStyle(
   // fontFamily: 'Nunito',
   fontSize: 14,
   color: AppColors.textColor,

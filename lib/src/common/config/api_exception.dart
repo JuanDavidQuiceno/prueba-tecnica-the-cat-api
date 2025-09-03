@@ -1,14 +1,13 @@
 // Clase para encapsular los errores de la API de forma controlada
 class ApiException implements Exception {
+  ApiException({
+    required this.type,
+    this.message = 'Ocurrió un error inesperado.',
+    this.statusCode,
+  });
   final String message;
   final int? statusCode;
   final ExceptionType type;
-
-  ApiException({
-    this.message = 'Ocurrió un error inesperado.',
-    this.statusCode,
-    required this.type,
-  });
 
   @override
   String toString() => 'ApiException: [$type] - $message (Status: $statusCode)';
