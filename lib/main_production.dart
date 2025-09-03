@@ -1,5 +1,6 @@
 import 'package:app/flavors.dart';
 import 'package:app/src/app.dart';
+import 'package:app/src/common/config/global_locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -10,7 +11,7 @@ Future<void> main() async {
   );
 
   /// inicializar inyección de dependencias
-  // setUpGlobalLocator();
+  setUpGlobalLocator();
   // Bloc.observer = ObserverBloc();
   runApp(const App());
 }
