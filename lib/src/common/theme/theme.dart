@@ -193,15 +193,15 @@ class AppThemes {
         borderRadius: BorderRadius.circular(8),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: AppColors.neutral400),
+        borderSide: const BorderSide(color: AppColors.textColor),
         borderRadius: BorderRadius.circular(8),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: const BorderSide(color: AppColors.neutral400),
+        borderSide: const BorderSide(color: AppColors.textColor),
         borderRadius: BorderRadius.circular(8),
       ),
       border: OutlineInputBorder(
-        borderSide: const BorderSide(color: AppColors.neutral400),
+        borderSide: const BorderSide(color: AppColors.textColor),
         borderRadius: BorderRadius.circular(8),
       ),
       filled: true,

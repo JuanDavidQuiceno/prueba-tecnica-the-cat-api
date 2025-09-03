@@ -78,13 +78,13 @@ class AppColors {
   /// This class is intended to be used as a static utility class.
   AppColors._();
 
-  static const textColor = neutral900;
-  static const primaryColor = primary300;
-  static const secondaryColor = primary300;
-  static const transparent = Colors.transparent;
+  static const Color textColor = Color(0xFF333D43);
+  static const Color primaryColor = Color(0xFF7DD1FB);
+  static const Color secondaryColor = Color(0xFF7DD1FB);
+  static const Color transparent = Colors.transparent;
   static const buttonColor = Color(0xFF14081B);
-  static const iconUnSelect = neutral900;
-  static const inactived = neutral300;
+  static const Color iconUnSelect = Color(0xFF333D43);
+  static const Color inactived = Color(0xFFA5B5BF);
 
   static const success = Color(0xFF0DA500);
   static const warning = Color(0xFFFFE600);
@@ -96,48 +96,4 @@ class AppColors {
   static const lightGrey = Color(0xFFF1F2EB);
   static const errorText = Color(0xFFF4667B);
   static const errorBorder = Color(0xFFE03E3E);
-
-  static const gradientColor = [primary300, secondary300, Color(0xFF8CF78A)];
-
-  // primary
-  static const primary20 = Color(0xFFF9FCFF);
-  static const primary50 = Color(0xFFF0F9FF);
-  static const primary100 = Color(0xFFE0F2FE);
-  static const primary200 = Color(0xFFBBE5FC);
-  static const primary300 = Color(0xFF7DD1FB);
-  static const primary400 = Color(0xFF39BAF7);
-  static const primary500 = Color(0xFF10A2E7);
-  static const primary600 = Color(0xFF0482C5);
-  static const primary700 = Color(0xFF0467A0);
-  static const primary800 = Color(0xFF085884);
-  static const primary900 = Color(0xFF0D496D);
-  static const primary950 = Color(0xFF082E49);
-
-  //Secondary o Complementary-1
-  static const secondary50 = Color(0xFFEEFBF2);
-  static const secondary100 = Color(0xFFD6F5DE);
-  static const secondary200 = Color(0xFFB0EAC2);
-  static const secondary300 = Color(0xFF73D698);
-  static const secondary400 = Color(0xFF47C078);
-  static const secondary500 = Color(0xFF24A55C);
-  static const secondary600 = Color(0xFF16854A);
-  static const secondary700 = Color(0xFF126A3D);
-  static const secondary800 = Color(0xFF115432);
-  static const secondary900 = Color(0xFF0E462A);
-  static const secondary950 = Color(0xFF072718);
-
-  // neutral
-  static const neutral10 = Color(0xFFFCFEFF);
-  static const neutral20 = Color(0xFFF6FAFF);
-  static const neutral50 = Color(0xFFF9FDFF);
-  static const neutral100 = Color(0xFFD5DDE2);
-  static const neutral200 = Color(0xFFC1CCD3);
-  static const neutral300 = Color(0xFFA5B5BF);
-  static const neutral400 = Color(0xFF94A7B3);
-  static const neutral500 = Color(0xFF7991A0);
-  static const neutral600 = Color(0xFF6E8492);
-  static const neutral700 = Color(0xFF566772);
-  static const neutral800 = Color(0xFF435058);
-  static const neutral900 = Color(0xFF333D43);
-  static const neutral950 = Color(0xFF111213);
 }

@@ -58,7 +58,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     emit(const AuthCheckingState(authStatus: AuthStatus.checking));
-    // try {
 
     await Future.delayed(const Duration(seconds: 2)).then((value) {
       emit(const AuthenticatedState(authStatus: AuthStatus.authenticated));
