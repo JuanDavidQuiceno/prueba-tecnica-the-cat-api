@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:app/src/feature/home/data/car_repository.dart';
+import 'package:app/src/feature/home/data/cat_repository.dart';
 import 'package:app/src/feature/home/domain/cat_model.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';

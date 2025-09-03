@@ -1,5 +1,5 @@
-import 'package:app/src/common/config/api_request.dart';
-import 'package:app/src/feature/home/data/car_repository.dart';
+import 'package:app/src/common/api/api_client.dart';
+import 'package:app/src/feature/home/data/cat_repository.dart';
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
 

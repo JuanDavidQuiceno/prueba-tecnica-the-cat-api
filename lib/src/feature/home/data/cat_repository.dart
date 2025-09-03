@@ -1,6 +1,5 @@
-// Un ejemplo de tu UserRepository
-import 'package:app/src/common/config/api_exception.dart';
-import 'package:app/src/common/config/api_request.dart';
+import 'package:app/src/common/api/api_client.dart';
+import 'package:app/src/common/api/api_exception.dart';
 import 'package:app/src/feature/home/domain/cat_model.dart';
 
 class CatRepository {
@@ -19,15 +18,10 @@ class CatRepository {
     String? search,
   }) async {
     return apiClient.get<List<CatModel>>(
-      path:
-          '/v1/breeds${search != null ? '?search=$search' : ''}', // Endpoint de la API para obtener la lista de usuarios
+      path: '/v1/breeds${search != null ? '?search=$search' : ''}',
+      // Endpoint de la API para obtener la lista de gatos
       fromJson: (json) {
-        // El JSON que llega es una List<dynamic>.
         final userList = json as List<dynamic>;
-
-        // Usamos .map para convertir cada elemento de la lista JSON en un
-        // objeto CatModel y luego .toList() para convertir el resultado
-        // de nuevo en una lista.
         return userList
             .map(
               (userJson) => CatModel.fromJson(userJson as Map<String, dynamic>),

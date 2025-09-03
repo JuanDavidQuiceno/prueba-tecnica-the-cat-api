@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:app/src/common/config/api_exception.dart';
-import 'package:app/src/common/config/environments.dart';
+import 'package:app/src/common/api/api_exception.dart';
+import 'package:app/src/common/environments.dart';
 import 'package:http/http.dart' as http;
 
 class ApiClient {

@@ -1,4 +1,4 @@
-import 'package:app/src/common/config/environments.dart';
+import 'package:app/src/common/environments.dart';
 import 'package:app/src/common/theme/extensions/text_theme_extension.dart';
 import 'package:app/src/feature/home/domain/cat_model.dart';
 import 'package:app/src/shared/widgets/images/custom_image.dart';

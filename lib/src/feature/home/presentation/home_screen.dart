@@ -2,7 +2,7 @@ import 'package:app/src/common/bloc/theme/theme_cubit.dart';
 import 'package:app/src/common/config/global_locator.dart';
 import 'package:app/src/common/constant/image_app.dart';
 import 'package:app/src/feature/errors/no_data.dart';
-import 'package:app/src/feature/home/data/car_repository.dart';
+import 'package:app/src/feature/home/data/cat_repository.dart';
 import 'package:app/src/feature/home/presentation/widgets/home_cat_card.dart';
 import 'package:app/src/feature/home/state/bloc/home_bloc.dart';
 import 'package:app/src/shared/widgets/text_field/custom_products_search.dart';
