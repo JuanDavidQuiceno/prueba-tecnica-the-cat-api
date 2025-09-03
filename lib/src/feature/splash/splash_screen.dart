@@ -1,7 +1,5 @@
-import 'dart:async';
-
+import 'package:app/flavors.dart';
 import 'package:app/src/common/bloc/auth/auth_bloc.dart';
-import 'package:app/src/common/constant/image_app.dart';
 import 'package:app/src/common/theme/app_colors.dart';
 import 'package:app/src/shared/images/custom_image.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +24,7 @@ class SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    // authBloc = global<AuthBloc>();
+    authBloc = context.read<AuthBloc>();
 
     _animationController(begin: 0, end: 0.9);
     animationController.forward().then(
@@ -138,7 +136,10 @@ class SplashScreenState extends State<SplashScreen>
                 ),
               ),
             ),
-            CustomImage(ImageApp.iconApp, height: screenSize.height * 0.25),
+            CustomImage(
+              FlavorsConfig.iconApp,
+              height: screenSize.height * 0.25,
+            ),
             const SizedBox(height: 20),
             ClipRRect(
               borderRadius: BorderRadius.circular(20),
