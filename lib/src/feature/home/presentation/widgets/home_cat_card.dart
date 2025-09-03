@@ -1,4 +1,5 @@
 import 'package:app/src/common/config/environments.dart';
+import 'package:app/src/common/theme/extensions/text_theme_extension.dart';
 import 'package:app/src/feature/home/domain/cat_model.dart';
 import 'package:app/src/shared/widgets/images/custom_image.dart';
 
@@ -31,19 +32,15 @@ class HomeCatCard extends StatelessWidget {
                 children: <Widget>[
                   if (catModel.name != null)
                     Expanded(
-                      child: Text(
-                        catModel.name!,
-                        style: Theme.of(context).textTheme.displayMedium,
-                      ),
+                      child: Text(catModel.name!, style: context.headingH3),
                     ),
                   const SizedBox(width: 10),
                   Expanded(
                     child: Text(
                       'Más...',
-                      style: Theme.of(context).textTheme.displayMedium
-                          ?.copyWith(
-                            decoration: TextDecoration.underline,
-                          ),
+                      style: context.body1.copyWith(
+                        decoration: TextDecoration.underline,
+                      ),
                       textAlign: TextAlign.end,
                     ),
                   ),
@@ -66,7 +63,7 @@ class HomeCatCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         catModel.origin!,
-                        style: Theme.of(context).textTheme.displayMedium,
+                        style: context.headingH3,
                       ),
                     ),
                   const SizedBox(width: 10),
@@ -74,7 +71,7 @@ class HomeCatCard extends StatelessWidget {
                     Expanded(
                       child: Text(
                         catModel.intelligence!.toString(),
-                        style: Theme.of(context).textTheme.displayMedium,
+                        style: context.headingH3,
                         textAlign: TextAlign.end,
                       ),
                     ),

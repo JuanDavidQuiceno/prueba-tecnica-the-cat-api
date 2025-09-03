@@ -1,5 +1,7 @@
+import 'package:app/src/common/config/global_locator.dart';
 import 'package:app/src/common/constant/image_app.dart';
 import 'package:app/src/feature/errors/no_data.dart';
+import 'package:app/src/feature/home/data/car_repository.dart';
 import 'package:app/src/feature/home/presentation/widgets/home_cat_card.dart';
 import 'package:app/src/feature/home/state/bloc/home_bloc.dart';
 import 'package:app/src/shared/widgets/text_field/custom_products_search.dart';
@@ -18,15 +20,15 @@ class _HomeScreenState extends State<HomeScreen> {
   late HomeBloc homeBloc;
   TextEditingController controller = TextEditingController();
   @override
-  // ignore: always_declare_return_types, type_annotate_public_apis
-  initState() {
-    homeBloc = HomeBloc()..add(GetHomeEvent());
+  void initState() {
+    homeBloc = HomeBloc(
+      repository: global<CatRepository>(),
+    )..add(GetHomeEvent());
     super.initState();
   }
 
   @override
-  // ignore: always_declare_return_types, type_annotate_public_apis
-  dispose() {
+  void dispose() {
     homeBloc.close();
     controller.dispose();
     super.dispose();

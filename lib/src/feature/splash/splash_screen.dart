@@ -1,6 +1,7 @@
 import 'package:app/flavors.dart';
 import 'package:app/src/common/bloc/auth/auth_bloc.dart';
 import 'package:app/src/common/theme/app_colors.dart';
+import 'package:app/src/common/theme/extensions/text_theme_extension.dart';
 import 'package:app/src/feature/home/presentation/home_screen.dart';
 import 'package:app/src/shared/widgets/images/custom_image.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +134,7 @@ class SplashScreenState extends State<SplashScreen>
                 tag: 'Catbreeds',
                 child: Text(
                   'Catbreeds',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: context.headingH1,
                 ),
               ),
             ),
