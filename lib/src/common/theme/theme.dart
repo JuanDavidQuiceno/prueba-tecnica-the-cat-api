@@ -1,6 +1,6 @@
 // lib/config/theme/app_theme.dart
 import 'package:app/src/common/theme/app_colors.dart';
-import 'package:app/src/shared/buttons/theme/custom_style_buttons.dart';
+import 'package:app/src/shared/widgets/buttons/theme/custom_style_buttons.dart';
 import 'package:flutter/material.dart';
 
 class AppThemes {
