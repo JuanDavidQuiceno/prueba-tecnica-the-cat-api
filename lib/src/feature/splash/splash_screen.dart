@@ -1,7 +1,8 @@
 import 'package:app/flavors.dart';
 import 'package:app/src/common/bloc/auth/auth_bloc.dart';
 import 'package:app/src/common/theme/app_colors.dart';
-import 'package:app/src/shared/images/custom_image.dart';
+import 'package:app/src/feature/home/presentation/home_screen.dart';
+import 'package:app/src/shared/widgets/images/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -57,7 +58,7 @@ class SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
+    final screenSize = MediaQuery.sizeOf(context);
     return Scaffold(
       body: BlocListener<AuthBloc, AuthState>(
         bloc: authBloc,
@@ -65,14 +66,14 @@ class SplashScreenState extends State<SplashScreen>
           if (state is AuthenticatedState) {
             _animationController(begin: 0.9, end: 1);
             await animationController.forward().then((value) {
-              // Navigator.pushAndRemoveUntil(
-              //   context,
-              //   MaterialPageRoute<void>(
-              //     settings: const RouteSettings(name: HomeScreen.routeName),
-              //     builder: (context) => const HomeScreen(),
-              //   ),
-              //   (route) => false,
-              // );
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute<void>(
+                  settings: const RouteSettings(name: HomeScreen.routeName),
+                  builder: (context) => const HomeScreen(),
+                ),
+                (route) => false,
+              );
             });
           }
           if (state is AuthNoAuthenticatedState) {
@@ -83,28 +84,28 @@ class SplashScreenState extends State<SplashScreen>
           if (state is AuthFinishWithError) {
             _animationController(begin: 0.9, end: 1);
             await animationController.forward().then((value) {
-              // Navigator.pushAndRemoveUntil(
-              //   context,
-              //   MaterialPageRoute<void>(
-              //     settings: const RouteSettings(name: HomeScreen.routeName),
-              //     builder: (context) => const HomeScreen(),
-              //   ),
-              //   (route) => false,
-              // );
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute<void>(
+                  settings: const RouteSettings(name: HomeScreen.routeName),
+                  builder: (context) => const HomeScreen(),
+                ),
+                (route) => false,
+              );
             });
           }
           if (state is AuthOnboardingState) {
             _animationController(begin: 0.9, end: 1);
             await animationController.forward().then(
               (value) => {
-                // Navigator.pushAndRemoveUntil(
-                //   context,
-                //   MaterialPageRoute<void>(
-                //     settings: const RouteSettings(name: HomeScreen.routeName),
-                //     builder: (context) => const HomeScreen(),
-                //   ),
-                //   (route) => false,
-                // ),
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute<void>(
+                    settings: const RouteSettings(name: HomeScreen.routeName),
+                    builder: (context) => const HomeScreen(),
+                  ),
+                  (route) => false,
+                ),
               },
             );
           }
@@ -141,13 +142,16 @@ class SplashScreenState extends State<SplashScreen>
               height: screenSize.height * 0.25,
             ),
             const SizedBox(height: 20),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: LinearProgressIndicator(
-                minHeight: 5,
-                value: animation.value,
-                color: AppColors.primaryColor,
-                backgroundColor: AppColors.grey,
+            SizedBox(
+              width: screenSize.width * 0.6,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: LinearProgressIndicator(
+                  minHeight: 5,
+                  value: animation.value,
+                  color: AppColors.primaryColor,
+                  backgroundColor: AppColors.grey,
+                ),
               ),
             ),
           ],
