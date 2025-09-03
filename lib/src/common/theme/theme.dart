@@ -33,6 +33,7 @@ class AppThemes {
       inputDecorationTheme: _inputDecorationTheme(Brightness.light),
       dividerTheme: _dividerTheme(),
       tooltipTheme: _tooltipTheme(Brightness.light),
+      cardTheme: _cardTheme(colors),
     );
   }
 
@@ -45,7 +46,7 @@ class AppThemes {
       extensions: const <ThemeExtension<dynamic>>[AppColorsExtension.dark],
       colorScheme: _colorScheme(Brightness.dark),
       scaffoldBackgroundColor: colors.background,
-      textTheme: _buildTextTheme(AppColors.textColor),
+      textTheme: _buildTextTheme(const Color(0xFFFFFFFF)),
       appBarTheme: _appBarTheme(colors),
       buttonTheme: _buttonTheme(),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -62,6 +63,7 @@ class AppThemes {
       inputDecorationTheme: _inputDecorationTheme(Brightness.dark),
       dividerTheme: _dividerTheme(),
       tooltipTheme: _tooltipTheme(Brightness.dark),
+      cardTheme: _cardTheme(colors),
     );
   }
 
@@ -165,11 +167,29 @@ class AppThemes {
 
   static AppBarTheme _appBarTheme(AppColorsExtension colors) {
     return AppBarTheme(
-      backgroundColor: const Color.fromRGBO(17, 18, 21, 0.2),
+      // backgroundColor: colors.backgroundColor,
       iconTheme: IconThemeData(color: colors.backgroundIconColor, size: 24),
       elevation: 1,
       surfaceTintColor: Colors.transparent,
       centerTitle: true,
+      actionsIconTheme: IconThemeData(
+        color: colors.backgroundIconColor,
+        size: 24,
+      ),
+
+      // color: AppColors.primaryColor,
+    );
+  }
+
+  static CardThemeData _cardTheme(AppColorsExtension colors) {
+    return CardThemeData(
+      color: colors.card,
+      // shadowColor: Colors.black.withAlpha((0.2 * 255).toInt()),
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      margin: const EdgeInsets.all(8),
     );
   }
 

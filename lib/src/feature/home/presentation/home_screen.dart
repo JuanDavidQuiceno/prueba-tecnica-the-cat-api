@@ -1,3 +1,4 @@
+import 'package:app/src/common/bloc/theme/theme_cubit.dart';
 import 'package:app/src/common/config/global_locator.dart';
 import 'package:app/src/common/constant/image_app.dart';
 import 'package:app/src/feature/errors/no_data.dart';
@@ -36,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeCubit = context.watch<ThemeCubit>();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -46,6 +48,19 @@ class _HomeScreenState extends State<HomeScreen> {
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
+        actions: [
+          IconButton(
+            // theme claro y oscuro
+            icon: Icon(
+              themeCubit.state == ThemeMode.dark
+                  ? Icons.light_mode
+                  : Icons.dark_mode,
+            ),
+            onPressed: () {
+              context.read<ThemeCubit>().toggleTheme();
+            },
+          ),
+        ],
       ),
       body: Column(
         children: [

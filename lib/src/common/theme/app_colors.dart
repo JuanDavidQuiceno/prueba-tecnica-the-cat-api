@@ -9,7 +9,7 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     // required this.alertColor,
     required this.transparent,
     required this.onSurface,
-    // required this.card,
+    required this.card,
   });
 
   final Color background;
@@ -18,27 +18,27 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   // final Color alertColor;
   final Color transparent;
   final Color onSurface;
-  // final Color card;
+  final Color card;
 
   static const AppColorsExtension light = AppColorsExtension(
     background: Color(0xFFFFFFFF),
     // hintColor: Color(0xFF9E9E9E), // Más claro, mejor contraste
-    backgroundIconColor: Color(0xFFFFFFFF), // Lila suave y visible
+    backgroundIconColor: Color(0xFF000000),
     // alertColor: Color(0xFFFFF9C4), // Amarillo claro para alertas
     transparent: Colors.transparent,
     onSurface: Color(0xFF000000),
-    // card: Color(0xFFF5F5F5), // Gris claro, más neutro
+    card: Color(0xFFF5F5F5), // Gris claro, más neutro
   );
 
   // falta agregar los colores que se usan para dark mode en caso que aplique
   static const AppColorsExtension dark = AppColorsExtension(
     background: Color(0xFF111111),
     // hintColor: Color(0xFFB0BEC5), // Azul-gris claro, bien legible
-    backgroundIconColor: Color(0xFF1E1E1E),
+    backgroundIconColor: Color(0xFFFFFFFF),
     // alertColor: Color(0xFF424242), // Gris oscuro visible, no negro absoluto
     transparent: Colors.transparent,
     onSurface: Color(0xFFFFFFFF),
-    // card: Color(0xFF2A2D3E),
+    card: Color(0xFF4D4D4D),
   );
 
   @override

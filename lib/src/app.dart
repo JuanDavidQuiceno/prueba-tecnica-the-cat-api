@@ -1,5 +1,6 @@
 import 'package:app/flavors.dart';
 import 'package:app/src/common/bloc/auth/auth_bloc.dart';
+import 'package:app/src/common/bloc/theme/theme_cubit.dart';
 import 'package:app/src/common/theme/theme.dart';
 import 'package:app/src/feature/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -10,23 +11,34 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthBloc(),
-      child: MaterialApp(
-        title: FlavorsConfig.title,
-        debugShowCheckedModeBanner: false,
-        initialRoute: SplashScreen.routeName,
-        home: const SplashScreen(),
-        theme: AppThemes.light,
-        darkTheme: AppThemes.dark,
-        themeMode: ThemeMode.light,
-        // mantener escala de fuente
-        builder: (context, child) {
-          return MediaQuery(
-            data: MediaQuery.of(
-              context,
-            ).copyWith(textScaler: TextScaler.noScaling),
-            child: child!,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(
+          create: (context) => AuthBloc(),
+        ),
+        BlocProvider(
+          create: (context) => ThemeCubit(),
+        ),
+      ],
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (_, state) {
+          return MaterialApp(
+            title: FlavorsConfig.title,
+            debugShowCheckedModeBanner: false,
+            initialRoute: SplashScreen.routeName,
+            home: const SplashScreen(),
+            theme: AppThemes.light,
+            darkTheme: AppThemes.dark,
+            themeMode: state,
+            // mantener escala de fuente
+            builder: (_, child) {
+              return MediaQuery(
+                data: MediaQuery.of(
+                  context,
+                ).copyWith(textScaler: TextScaler.noScaling),
+                child: child!,
+              );
+            },
           );
         },
       ),
