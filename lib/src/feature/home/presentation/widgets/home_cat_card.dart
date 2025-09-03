@@ -1,6 +1,7 @@
 import 'package:app/src/common/config/environments.dart';
 import 'package:app/src/common/theme/extensions/text_theme_extension.dart';
 import 'package:app/src/feature/home/domain/cat_model.dart';
+import 'package:app/src/feature/home/presentation/cat_detail/cat_detail_screen.dart';
 import 'package:app/src/shared/widgets/images/custom_image.dart';
 
 import 'package:flutter/material.dart';
@@ -16,13 +17,13 @@ class HomeCatCard extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadius.circular(10),
         onTap: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute<void>(
-          //     settings: const RouteSettings(name: CatDetailtScreen.routeName),
-          //     builder: (context) => CatDetailtScreen(catModel: catModel),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              settings: const RouteSettings(name: CatDetailtScreen.routeName),
+              builder: (context) => CatDetailtScreen(catModel: catModel),
+            ),
+          );
         },
         child: Padding(
           padding: const EdgeInsets.all(20),
