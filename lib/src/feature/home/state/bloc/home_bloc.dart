@@ -31,7 +31,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           data: await _repository.getCats(),
         ),
       );
-    } catch (e) {
+    } on Exception catch (e) {
+      // Optionally log the error for diagnostics
       emit(
         HomeErrorState(
           message: e.toString(),
@@ -51,7 +52,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
           (element) => element.name!.toLowerCase().contains(event.query),
         )
         .toList();
-
     await Future.delayed(const Duration(milliseconds: 500)).then((value) {
       return emit(
         HomeSearchState(
